@@ -192,7 +192,6 @@ body {
                 height: 65%;
             }
         }
-
     }
 
     .options-container {
@@ -258,6 +257,8 @@ body {
             box-shadow: 1px 1px 5px 1px rgba(49, 49, 49, 0.3);
         }
     }
+
+
 }
 
 .exceed {
@@ -519,16 +520,16 @@ body.darktheme {
 // media query for larger screen
 @media only screen and (min-width: 1365px) {
     .container {
-        width: 350px;
+        width: 300px;
         .options-container {
             & > button {
-                width: 60px;
-                height: 60px;
+                width: 50px;
+                height: 50px;
             }
         }
     }
     .leftee {
-        top: 45%;
+        top: 50%;
         width: 960px;
         max-height: 600px;
         margin-bottom: 50px;
