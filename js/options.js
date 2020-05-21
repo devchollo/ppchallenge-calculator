@@ -13,6 +13,8 @@ const leftee = document.querySelector('.leftee');
 // the moon icon selector
 const moon = document.querySelector('#darkmode');
 
+const logp = document.querySelector('.logpad');
+
 // stat is for the icon color toggle
 let stat = false;
 
@@ -22,6 +24,7 @@ opt.addEventListener('click', () => {
     cont.classList.toggle('moveeee');
     functionalityUno.classList.toggle('popside');
     leftee.classList.toggle('lmove');
+    logp.classList.toggle('max-lp');
     // condition for filling the icon
     if(stat) {
         icon.style.fill = "#f7f7f7";

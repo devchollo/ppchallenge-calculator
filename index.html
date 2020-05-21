@@ -8,14 +8,21 @@
     <script src="https://kit.fontawesome.com/832366a04d.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Log Pad -->
-    <div class="logpad">
-        <ul id="logPad">
-            <li>Log Pad &#x1F60E;</li>
-        </ul>
-    </div>
+    
     <!-- basic calculator -->
     <div class="container">
+        <!-- Log Pad -->
+        <div class="logpad" id="dragCont">
+            <div class="li">
+                <div>Log Pad &#x1F60E;</div>
+                <div id="dragContdragHead">
+                    <i class="fas fa-arrows-alt"></i>
+                </div>
+            </div>
+            <ul id="logPad">
+                
+            </ul>
+        </div>
         <div class="calculator-wrapper">
             <div class="extras">
                 <div class="logo">
@@ -108,7 +115,7 @@
         </div>
     </div>
         <div class="leftee">
-            <iframe style="border-radius: 25px; border: none;" width="850" height="700" src="https://docs.google.com/spreadsheets/d/1AYLUPTECfDF1hsEYx7aXV46EmE8AuoEHhaRqHvB5DeU/edit?rm=minimal"></iframe>
+            <iframe style="border-radius: 25px; border: none;" src="https://docs.google.com/spreadsheets/d/1AYLUPTECfDF1hsEYx7aXV46EmE8AuoEHhaRqHvB5DeU/edit?rm=minimal"></iframe>
             <div style="padding: 15px"><strong>Tip! </strong>To print the sheet, hold Ctrl button and press P.</div>
             <footer style="padding: 0 10px; ">
                 <div class="left">
@@ -126,7 +133,7 @@
             </footer>
         </div>
     </div>
-
+    <script src="./js/drag.js"></script>
     <script src="./js/time.js"></script>
     <script src="./js/options.js"></script>
     <script src="./js/main.js"></script>

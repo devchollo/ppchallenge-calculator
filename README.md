@@ -10,7 +10,7 @@
 > Follow me on Twitter: 
 [https://twitter.com/kent_sevillejo](https://twitter.com/kent_sevillejo)
 
-
+#### Note: This site is ideal only for those who have a screen size greater than 1280px !
 ![baner](./res/banner.png)
 
 > Goal

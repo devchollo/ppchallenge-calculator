@@ -8,6 +8,7 @@
     font-family: 'Baloo 2', cursive;
     user-select: none;
 }
+
 .dot {
     color: white;
     font-weight: bolder;
@@ -30,13 +31,13 @@ body {
     align-items: center;
     justify-content: center;
     padding-bottom: 50px;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .logpad {
     position: absolute;
-    right: 5%;
-    top: 5%;
+    left: 105%;
+    top: 0;
     width: 300px;
     height: 400px;
     background: #f7f7f7;
@@ -48,15 +49,25 @@ body {
     overflow-x: auto;
     border-top: solid 8px #3f3f44;
     border-bottom: solid 3px #3f3f44;
+    z-index: 999;
+    .li{
+        width: 100%;
+        display: flex;
+        border-bottom: solid 1px #3f3f4434;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 0;
+        div:nth-of-type(2){
+            background: #3f3f442a;
+            padding: 4px 8px;
+            cursor: move;
+        }
+    }
     ul li{ 
         width: 100%;
         list-style: none;
         padding: 6px 5px;
         border-bottom: dotted 1px #3f3f4434;
-        .fa-bookmark {
-            color: #3f3f44;
-            font-size: 1.5rem;
-        }
     }
 }
 
@@ -326,7 +337,7 @@ body {
 }
 .moveeee{
     position: absolute;
-    top: 30px;
+    top: 20px;
     left: 30px;
     transform: translate(0,0);
     transition: all 0.3s ease;
@@ -349,7 +360,7 @@ body {
 }
 .leftee{
     position: absolute;
-    left: 110%;
+    left: 105%;
     opacity: 0;
     pointer-events: none;
     padding: 5px 5px 1rem 5px;
@@ -361,6 +372,10 @@ body {
     transition: all 0.3s ease-out;
     border-top: solid 3px #3f3f44;
     border-bottom: solid 6px #3f3f44;
+    iframe {
+        width: 880px; 
+        height: 700px; 
+    }
     footer {
         width: 100%;
         display: flex;
@@ -434,8 +449,11 @@ body.darktheme {
         color: #f7f7f7;
         border-top: solid 8px #ec8d73;
         border-bottom: solid 3px #ec8d73;
+        .li{
+            border-bottom: solid 1px #c0c0c0;
+        }
         ul li{
-            border-bottom: dotted 1px #c0c0c0;
+            border-bottom: dotted 1px #e4e4e4;
         }
     }
 
@@ -496,4 +514,37 @@ body.darktheme {
         }
     }
 
+}
+
+// media query for larger screen
+@media only screen and (min-width: 1365px) {
+    .container {
+        width: 350px;
+        .options-container {
+            & > button {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+    .leftee {
+        top: 45%;
+        width: 960px;
+        max-height: 600px;
+        margin-bottom: 50px;
+        iframe {
+            width: 100%;
+        }
+    }
+    .sci-cont {
+        top: 0;
+        left: 105%;
+    }
+
+    .max-lp {
+        left: calc(100% + 340px);
+        width: 620px;
+        height: 240px;
+    }
+    
 }
