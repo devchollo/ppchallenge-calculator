@@ -22,6 +22,7 @@ body {
     background:url('../res/deys.svg'), #f7f7f7;
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -450,7 +451,6 @@ body.darktheme {
         border-bottom: solid 5px #b1e8ed;
         border-right: solid 2px #b1e8ed;
         border-left: solid 2px #b1e8ed;
-
     }
     .extras, .extra2 {
         background: #4f4f53;
