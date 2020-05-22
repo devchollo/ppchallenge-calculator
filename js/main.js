@@ -86,6 +86,8 @@ class Calculator {
         // the currentTextViewer will be set to empty string;
         this.readyToReset = true;
         this.currentOperand  = result;
+        // set the this.result to the result for the log pad
+        this.result = result;
         this.operation = undefined;
         this.previousOperand  = '';
     }
@@ -170,12 +172,16 @@ class Calculator {
         this.currentOperand = espresult;
         this.operation = undefined;
         this.espSymbol = esp;
+        // set the this.result to currentviewer inner text for the log pad
+        this.result = this.currTextViewer.innerHTML;
     }
 
-    // factorial function
+    // factorial function 
     factorial(input) {
+        // dont proceed if the input is negative
         if(input < 0) return;
-        let num = Math.ceil(input);
+        // round up the input to be calculated
+        let num = Math.round(input);
         let res = 1;
         for(let i = 1; i <= num; ++i) res *= i;
         return res;
@@ -192,6 +198,7 @@ class Calculator {
         this.currentOperand = '';
         this.previousOperand = '';
         this.operation = undefined;
+        this.espSymbol = undefined;
     }
 
     //get display
@@ -231,7 +238,9 @@ class Calculator {
 
     // especial buttons logging
     log(logPad) {
-        this.data = `✓ ${this.espSymbol}(${this.curr}) = ${this.total}`;
+        // if the current text viewer is empty dont proceed
+        if(this.currTextViewer.innerHTML === '') return;
+        this.data = `✓ ${this.espSymbol}(${this.result}) = ${this.total}`;
         this.node = document.createElement('LI');
         this.nodeVal = document.createTextNode(this.data);
         this.node.appendChild(this.nodeVal);
@@ -241,6 +250,9 @@ class Calculator {
 
     // for logging every press 
     Basiclog(logPad) {
+        // if the current text viewer is empty dont proceed
+
+        if(this.currTextViewer.innerHTML === '') return;
         this.data = `✓ ${this.prev} ${this.symbol} ${this.curr} = ${this.total}`;
         this.node = document.createElement('LI');
         this.nodeVal = document.createTextNode(this.data);

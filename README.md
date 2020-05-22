@@ -1,13 +1,13 @@
 # Battle of Calcus :tada:
-> HTML - CSS - JS
+> HTML - CSS - JS 
 
-> Add me on facebook: 
+> Add me on facebook: :blue_heart:
 [https://www.facebook.com/stfurtrd](https://www.facebook.com/stfurtrd)
 
-> Follow me on Instagram: 
+> Follow me on Instagram: :green_heart:
 [https://www.instagram.com/real_vals_28/](https://www.instagram.com/real_vals_28/)
 
-> Follow me on Twitter: 
+> Follow me on Twitter: :purple_heart:
 [https://twitter.com/kent_sevillejo](https://twitter.com/kent_sevillejo)
 
 #### Note: This site is ideal only for those who have a screen size greater than 1280px !
@@ -29,8 +29,14 @@
 - [x] Night Mode & Day Mode
 - [x] Google Spreadsheet
 
-> Update
+> Updates and Bug fix
 - [x] Added Clear button for the Log Pad
+- [x] Bug fixed for the logpad still showing result without input
+
+
+> If bug is found, please contact me thru my facebook messenger thankyouu :heartpulse:
+
+
 
 
 > Challenge from Programming Philippines Group
