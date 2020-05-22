@@ -1,6 +1,10 @@
 # Battle of Calcus :tada:
 > HTML - CSS - JS 
 
+```javascript
+let do = (calculator === 'Awesome') ? github.Star() : github.Fork().then(improve);
+```
+
 > Add me on facebook: :blue_heart:
 [https://www.facebook.com/stfurtrd](https://www.facebook.com/stfurtrd)
 
