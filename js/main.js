@@ -189,10 +189,8 @@ class Calculator {
     // factorial function 
     factorial(input) {
         // dont proceed if the input is negative
-        if(input < 0) return;
-        // round up the input to be calculated
-        // in case the user input is a floating number, I just round it up :P 
-        let num = Math.round(input);
+        if(input < 0 || input.toString().includes('.')) return;
+        let num = input
         let res = 1;
         for(let i = 1; i <= num; ++i) res *= i;
         return res;
@@ -272,11 +270,12 @@ class Calculator {
         this.node.appendChild(this.nodeVal);
         logPad.appendChild(this.node);        
     }
+    // for the logpad clear button
     erase(logpad) {
         if(logpad.innerHTML === '') return;
         logpad.innerHTML = '';
     }
-
+    // for the auto scroll feature
     toBottom(div) {
         div.scrollTop = div.scrollHeight;
     }
