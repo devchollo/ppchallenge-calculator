@@ -102,7 +102,8 @@ class Calculator {
         let espresult;
         switch(esp){
             case '+/-': 
-                espresult = -Math.abs(input);
+            // convert input to negative or positive
+                espresult = (input > 0) ? -Math.abs(input) : Math.abs(input);
                 break;
             case '1/x': 
                 espresult = 1 / input;            
