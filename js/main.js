@@ -73,7 +73,10 @@ class Calculator {
                 result = prev * curr;
                 break;
             case 'mod':
-                if(prev < curr) return;
+                if(prev < curr){
+                    this.modError = true;
+                    return;
+                }
                 result = prev % curr;
                 break;
             case 'x^y':
@@ -181,6 +184,7 @@ class Calculator {
         // dont proceed if the input is negative
         if(input < 0) return;
         // round up the input to be calculated
+        // in case the user input is a floating number, I just round it up :P 
         let num = Math.round(input);
         let res = 1;
         for(let i = 1; i <= num; ++i) res *= i;
@@ -248,11 +252,10 @@ class Calculator {
     }
 
 
-    // for logging every press 
+    // logging for basic compute
     Basiclog(logPad) {
         // if the current text viewer is empty dont proceed
-
-        if(this.currTextViewer.innerHTML === '') return;
+        if(this.currTextViewer.innerHTML === '' || this.modError) return;
         this.data = `✓ ${this.prev} ${this.symbol} ${this.curr} = ${this.total}`;
         this.node = document.createElement('LI');
         this.nodeVal = document.createTextNode(this.data);
