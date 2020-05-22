@@ -324,6 +324,7 @@ body {
                 outline: none;
                 box-shadow: 1px 1px 5px 1px rgba(49, 49, 49, 0.1);
             }
+
         }
         .right {
             background: #dc98f754;
@@ -334,6 +335,9 @@ body {
             background: #fff3cd;
             color: #fa744f;
             box-shadow: 1px 1px 5px 1px #fa744f44;
+        }
+        .pi {
+            box-shadow: 1px 1px 5px 1px rgba(49, 49, 49, 0.2);
         }
     }
 }

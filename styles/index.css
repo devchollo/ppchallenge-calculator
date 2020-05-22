@@ -462,6 +462,11 @@ body {
           box-shadow: 1px 1px 5px 1px #fa744f44;
 }
 
+.sci-cont .sc-c .pi {
+  -webkit-box-shadow: 1px 1px 5px 1px rgba(49, 49, 49, 0.2);
+          box-shadow: 1px 1px 5px 1px rgba(49, 49, 49, 0.2);
+}
+
 .popside {
   top: calc(100% + 1rem);
   pointer-events: all;

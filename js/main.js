@@ -101,8 +101,11 @@ class Calculator {
         if(isNaN(input)) return;
         let espresult;
         switch(esp){
+            case '+/-': 
+                espresult = -Math.abs(input);
+                break;
             case '1/x': 
-                espresult = 1 / input;
+                espresult = 1 / input;            
                 break;
             case '√':
                 espresult = Math.sqrt(input);
@@ -255,7 +258,8 @@ class Calculator {
     // logging for basic compute
     Basiclog(logPad) {
         // if the current text viewer is empty dont proceed
-        if(this.currTextViewer.innerHTML === '' || this.modError) return;
+        if(this.modError) return;
+        if(this.currTextViewer.innerHTML === '') return;
         this.data = `✓ ${this.prev} ${this.symbol} ${this.curr} = ${this.total}`;
         this.node = document.createElement('LI');
         this.nodeVal = document.createTextNode(this.data);
