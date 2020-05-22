@@ -39,3 +39,10 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
+
+
+// AUTO SCROLL TO THE BOTTOM 
+window.setInterval(function() {
+  let e = document.getElementById('dragCont');
+  e.scrollTop = e.scrollHeight;
+}, 1000);
