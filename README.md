@@ -11,10 +11,10 @@
 [https://twitter.com/kent_sevillejo](https://twitter.com/kent_sevillejo)
 
 #### Note: This site is ideal only for those who have a screen size greater than 1280px !
-## The view for screens less than 1366px
+## The view for screens less than 1366px wide
 ![baner](./res/banner.png)
 
-## The view for screens above 1366px
+## The view for screens above 1366px wide
 ![baner](./res/bg2.png)
 
 > Goal
