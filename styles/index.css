@@ -675,7 +675,7 @@ body.darktheme .output {
   background: #f7f7f7;
 }
 
-body.darktheme .options-container > button, body.darktheme .options-container .up, body.darktheme .options-container .right, body.darktheme .options-container .clear, body.darktheme .options-container .bk, body.darktheme .sc-c > button, body.darktheme .sc-c .up, body.darktheme .sc-c .right, body.darktheme .sc-c .clear, body.darktheme .sc-c .bk {
+body.darktheme .options-container > button, body.darktheme .options-container .up, body.darktheme .options-container .right, body.darktheme .options-container .clear, body.darktheme .options-container .bk, body.darktheme .options-container .pi, body.darktheme .sc-c > button, body.darktheme .sc-c .up, body.darktheme .sc-c .right, body.darktheme .sc-c .clear, body.darktheme .sc-c .bk, body.darktheme .sc-c .pi {
   background: #3f3f44;
   color: #f7f7f7;
   -webkit-box-shadow: -1px -1px 1px 0 rgba(255, 255, 255, 0.233), 1px 1px 1px 0 rgba(8, 8, 8, 0.555);

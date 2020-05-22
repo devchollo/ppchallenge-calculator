@@ -96,9 +96,8 @@ class Calculator {
     }
     // method for complex computation
     scientific(esp) {
-        if(this.previousOperand !== '') return;
         const input = parseFloat(this.currTextViewer.innerHTML);
-        if(isNaN(input)) return;
+        if(this.previousOperand !== '' || this.currTextViewer.innerHTML === '') return;
         let espresult;
         switch(esp){
             case '+/-': 
@@ -109,6 +108,10 @@ class Calculator {
                 espresult = 1 / input;            
                 break;
             case '√':
+                if(input < 0){
+                    this.espSymbol = undefined;
+                    break;
+                }
                 espresult = Math.sqrt(input);
                 break;
             case 'x2':
@@ -246,8 +249,9 @@ class Calculator {
 
     // especial buttons logging
     log(logPad) {
-        // if the current text viewer is empty dont proceed
-        if(this.currTextViewer.innerHTML === '') return;
+        if (this.espSymbol === undefined) return;
+        // if the current text viewer is empty or the previous operand has a value, dont proceed
+        if(this.currTextViewer.innerHTML === '' || this.previousOperand !== '') return;
         this.data = `✓ ${this.espSymbol}(${this.result}) = ${this.total}`;
         this.node = document.createElement('LI');
         this.nodeVal = document.createTextNode(this.data);
@@ -259,6 +263,7 @@ class Calculator {
     // logging for basic compute
     Basiclog(logPad) {
         // if the current text viewer is empty dont proceed
+        if(this.previousOperand === undefined || this.symbol === undefined) return;
         if(this.modError) return;
         if(this.currTextViewer.innerHTML === '') return;
         this.data = `✓ ${this.prev} ${this.symbol} ${this.curr} = ${this.total}`;
@@ -270,6 +275,10 @@ class Calculator {
     erase(logpad) {
         if(logpad.innerHTML === '') return;
         logpad.innerHTML = '';
+    }
+
+    toBottom(div) {
+        div.scrollTop = div.scrollHeight;
     }
 }
 
@@ -286,6 +295,7 @@ const specialBtns = document.querySelectorAll('[data-esp]');
 const erase = document.querySelector('#clear');
 const logPad = document.getElementById('logPad');
 
+const dragCont = document.getElementById('dragCont');
 // create a variable for the object calculator
 const calculator = new Calculator(prevTextViewer, currTextViewer);
 
@@ -317,6 +327,8 @@ specialBtns.forEach(esp => {
         calculator.scientific(esp.innerHTML);
         calculator.update();
         calculator.log(logPad);
+        // to scroll down logpad after each click
+        calculator.toBottom(dragCont);
     });
 });
 
@@ -333,6 +345,9 @@ eqBtn.addEventListener('click', () => {
     calculator.BasicCompute();
     calculator.update();
     calculator.Basiclog(logPad);
+    // to scroll down logpad after each click of the equals button
+    calculator.toBottom(dragCont);
+
 });
 
 // Event Listener for the delete button
