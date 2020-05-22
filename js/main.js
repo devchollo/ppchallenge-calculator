@@ -247,7 +247,10 @@ class Calculator {
         this.node.appendChild(this.nodeVal);
         logPad.appendChild(this.node);        
     }
-
+    erase(logpad) {
+        if(logpad.innerHTML === '') return;
+        logpad.innerHTML = '';
+    }
 }
 
 
@@ -260,7 +263,7 @@ const clearBtn = document.querySelector('[data-clear]');
 const prevTextViewer = document.getElementById('prev');
 const currTextViewer = document.getElementById('curr');
 const specialBtns = document.querySelectorAll('[data-esp]');
-
+const erase = document.querySelector('#clear');
 const logPad = document.getElementById('logPad');
 
 // create a variable for the object calculator
@@ -281,6 +284,11 @@ numberBtns.forEach(num => {
         calculator.append(num.innerHTML);
         calculator.update();
     });
+});
+
+//clear log pad
+erase.addEventListener('click', () => {
+    calculator.erase(logPad);
 });
 
 // loop thru especial btns

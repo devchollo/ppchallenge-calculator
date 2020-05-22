@@ -29,6 +29,10 @@
 - [x] Night Mode & Day Mode
 - [x] Google Spreadsheet
 
+> Update
+- [x] Added Clear button for the Log Pad
+
+
 > Challenge from Programming Philippines Group
 [Programming Philippines](https://www.facebook.com/groups/649943542157470/)
 

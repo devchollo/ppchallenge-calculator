@@ -8,7 +8,16 @@
     font-family: 'Baloo 2', cursive;
     user-select: none;
 }
-
+.erase {
+    color: #f7f7f7;
+    padding: 6px 10px;
+    width: 90px;
+    background: rgb(104, 104, 236);
+    text-align: center;
+    margin-top: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
 .dot {
     color: white;
     font-weight: bolder;
