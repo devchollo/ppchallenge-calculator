@@ -368,6 +368,13 @@ body {
           box-shadow: 1px 1px 5px 1px #fa744f44;
 }
 
+.container .options-container .conv {
+  background: #6868ec;
+  color: #f7f7f7;
+  -webkit-box-shadow: 1px 1px 5px 1px rgba(104, 104, 236, 0.3);
+          box-shadow: 1px 1px 5px 1px rgba(104, 104, 236, 0.3);
+}
+
 .container .options-container .bk, .container .options-container .clear {
   color: #f7f7f7;
   background: #e74c3c;
