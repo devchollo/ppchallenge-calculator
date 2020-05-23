@@ -38,6 +38,7 @@ let do = (calculator === 'Awesome') ? github.Star() : github.Fork().then(improve
 - [x] Auto scroll to bottom in the Log Pad feature added
 - [x] Bug fixed for the logpad still showing result without input
 - [x] Bug fixed for the current operand reset 
+- [x] Bug fixed for the log pad still showing the pressed number even if its deleted
 
 
 > If bug is found, please contact me thru my facebook messenger thankyouu :heartpulse:

@@ -199,11 +199,14 @@ class Calculator {
     // delete method for the backspace
     delete() {
         this.currentOperand  = this.currentOperand.toString().slice(0, -1);
+        // for the log pad 
+        this.curr = this.currentOperand;
     }
 
     //clear method for Clear Button
     clear() {
         // clearing the viewers and setting the operation to undefined
+        this.readyToReset = true;
         this.currentOperand = '';
         this.previousOperand = '';
         this.operation = undefined;
@@ -249,7 +252,7 @@ class Calculator {
     log(logPad) {
         if (this.espSymbol === undefined) return;
         // if the current text viewer is empty or the previous operand has a value, dont proceed
-        if(this.currTextViewer.innerHTML === '' || this.previousOperand !== '') return;
+        if(this.currentOperand === '' || this.previousOperand !== '') return;
         this.data = `✓ ${this.espSymbol}(${this.result}) = ${this.total}`;
         this.node = document.createElement('LI');
         this.nodeVal = document.createTextNode(this.data);
@@ -263,7 +266,7 @@ class Calculator {
         // if the current text viewer is empty dont proceed
         if(this.previousOperand === undefined || this.symbol === undefined) return;
         if(this.modError) return;
-        if(this.currTextViewer.innerHTML === '') return;
+        if(this.currentOperand === '') return;
         this.data = `✓ ${this.prev} ${this.symbol} ${this.curr} = ${this.total}`;
         this.node = document.createElement('LI');
         this.nodeVal = document.createTextNode(this.data);
@@ -301,11 +304,10 @@ const calculator = new Calculator(prevTextViewer, currTextViewer);
 // loop thru each numbers in numberBtns
 numberBtns.forEach(num => {
     num.addEventListener('click', () => {
-        
         // this will only fire when you had a previous calculation.
         // checking if the current operand is not empty and this.readyToReset is set to True
         // then clear the currentOperand and set readyToReset to False
-        if(calculator.previousOperand === '' && calculator.currentOperand !== "" && calculator.readyToReset) {
+        if(calculator.previousOperand === '' && calculator.readyToReset) {
             calculator.currentOperand = "";
             calculator.readyToReset = false;
             // debug purpose
