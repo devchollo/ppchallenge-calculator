@@ -188,7 +188,7 @@ class Calculator {
 
     // factorial function 
     factorial(input) {
-        // dont proceed if the input is negative
+        // dont proceed if the input is negative and is a floating number
         if(input < 0 || input.toString().includes('.')) return;
         let num = input
         let res = 1;
