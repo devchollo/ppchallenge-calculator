@@ -37,11 +37,10 @@ let do = (calculator === 'Awesome') ? github.Star() : github.Fork().then(improve
 - [x] Added Clear button for the Log Pad
 - [x] Auto scroll to bottom in the Log Pad feature added
 - [x] Bug fixed for the logpad still showing result without input
+- [x] Bug fixed for the current operand reset 
 
 
 > If bug is found, please contact me thru my facebook messenger thankyouu :heartpulse:
-
-
 
 
 > Challenge from Programming Philippines Group

@@ -38,7 +38,7 @@ class Calculator {
         // checking if the current viewer is empty, then do nothing
         if (this.currentOperand  === '') return;
         // if not empty proceed to computation
-        if (this.previousOperand  !== '') {
+        if (this.previousOperand  !== '' && this.currentOperand !== '') {
           this.BasicCompute();
         }
         this.symbol = symbol;
@@ -301,13 +301,15 @@ const calculator = new Calculator(prevTextViewer, currTextViewer);
 // loop thru each numbers in numberBtns
 numberBtns.forEach(num => {
     num.addEventListener('click', () => {
+        
         // this will only fire when you had a previous calculation.
         // checking if the current operand is not empty and this.readyToReset is set to True
         // then clear the currentOperand and set readyToReset to False
-        if(calculator.currentOperand !== "" && calculator.readyToReset) {
+        if(calculator.previousOperand === '' && calculator.currentOperand !== "" && calculator.readyToReset) {
             calculator.currentOperand = "";
             calculator.readyToReset = false;
             // debug purpose
+            // [bug solved]! [closed]
             console.log('previous calculation removed!');
         }
         calculator.append(num.innerHTML);
