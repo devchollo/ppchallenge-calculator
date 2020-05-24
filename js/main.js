@@ -208,7 +208,7 @@ class Calculator {
         // clearing the viewers and setting the operation to undefined
         this.readyToReset = true;
         this.currentOperand = '';
-        this.previousOperand = '';
+        this.previousOperand = undefined;
         this.operation = undefined;
         this.espSymbol = undefined;
     }
@@ -264,14 +264,14 @@ class Calculator {
     // logging for basic compute
     Basiclog(logPad) {
         // if the current text viewer is empty dont proceed
-        if(this.previousOperand === undefined || this.symbol === undefined) return;
+        if(this.previousOperand !== '' || this.operation !== undefined) return;
         if(this.modError) return;
         if(this.currentOperand === '') return;
         this.data = `✓ ${this.prev} ${this.symbol} ${this.curr} = ${this.total}`;
         this.node = document.createElement('LI');
         this.nodeVal = document.createTextNode(this.data);
         this.node.appendChild(this.nodeVal);
-        logPad.appendChild(this.node);        
+        logPad.appendChild(this.node);      
     }
     // for the logpad clear button
     erase(logpad) {
