@@ -208,7 +208,7 @@ class Calculator {
         // clearing the viewers and setting the operation to undefined
         this.readyToReset = true;
         this.currentOperand = '';
-        this.previousOperand = '';
+        this.previousOperand = undefined;
         this.operation = undefined;
         this.espSymbol = undefined;
     }
