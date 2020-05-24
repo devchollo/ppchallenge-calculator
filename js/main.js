@@ -97,7 +97,7 @@ class Calculator {
     // method for complex computation
     scientific(esp) {
         const input = parseFloat(this.currTextViewer.innerHTML);
-        if(this.currentOperand === '') return;
+        if(this.currentOperand === '' || this.previousOperand !== '') return;
         let espresult;
         switch(esp){
             case '+/-': 
