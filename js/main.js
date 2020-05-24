@@ -97,7 +97,7 @@ class Calculator {
     // method for complex computation
     scientific(esp) {
         const input = parseFloat(this.currTextViewer.innerHTML);
-        if(this.previousOperand !== '' || this.currTextViewer.innerHTML === '') return;
+        if(this.currentOperand === '') return;
         let espresult;
         switch(esp){
             case '+/-': 
@@ -252,7 +252,7 @@ class Calculator {
     log(logPad) {
         if (this.espSymbol === undefined) return;
         // if the current text viewer is empty or the previous operand has a value, dont proceed
-        if(this.currentOperand === '' || this.previousOperand !== '') return;
+       if(this.currTextViewer.innerHTML === '' || this.previousOperand !== '') return;
         this.data = `✓ ${this.espSymbol}(${this.result}) = ${this.total}`;
         this.node = document.createElement('LI');
         this.nodeVal = document.createTextNode(this.data);
@@ -264,14 +264,14 @@ class Calculator {
     // logging for basic compute
     Basiclog(logPad) {
         // if the current text viewer is empty dont proceed
-        if(this.previousOperand === undefined || this.symbol === undefined) return;
+        if(this.previousOperand !== '' || this.operation !== undefined) return;
         if(this.modError) return;
         if(this.currentOperand === '') return;
         this.data = `✓ ${this.prev} ${this.symbol} ${this.curr} = ${this.total}`;
         this.node = document.createElement('LI');
         this.nodeVal = document.createTextNode(this.data);
         this.node.appendChild(this.nodeVal);
-        logPad.appendChild(this.node);        
+        logPad.appendChild(this.node);      
     }
     // for the logpad clear button
     erase(logpad) {
