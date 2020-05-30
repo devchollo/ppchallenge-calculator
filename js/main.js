@@ -97,7 +97,7 @@ class Calculator {
     // method for complex computation
     scientific(esp) {
         const input = parseFloat(this.currTextViewer.innerHTML);
-        if(this.currentOperand === '' || this.previousOperand !== '') return;
+        if(this.currentOperand ==='' || this.prevTextViewer.innerHTML === '') return;
         let espresult;
         switch(esp){
             case '+/-': 
@@ -252,7 +252,7 @@ class Calculator {
     log(logPad) {
         if (this.espSymbol === undefined) return;
         // if the current text viewer is empty or the previous operand has a value, dont proceed
-       if(this.currTextViewer.innerHTML === '' || this.previousOperand !== '') return;
+    //    if(this.currTextViewer.innerHTML === '' || this.previousOperand !== '') return;
         this.data = `✓ ${this.espSymbol}(${this.result}) = ${this.total}`;
         this.node = document.createElement('LI');
         this.nodeVal = document.createTextNode(this.data);
